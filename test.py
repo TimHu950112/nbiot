@@ -1,6 +1,5 @@
-from utime import ticks_ms, sleep_ms
-from am7020.am7020_nb import AM7020NB
-from am7020.am7020_mqtt import AM7020MQTT
+from am7020_nb import AM7020NB
+from am7020_mqtt import AM7020MQTT
 
 
 
@@ -32,8 +31,6 @@ def nbConnect():  # ⾃訂連線程序
     print("Waiting for network...")
     while(not nb.waitForNetwork()):
         print(".")
-        sleep_ms(5000)
-
     print(" success")
 
 
@@ -62,12 +59,11 @@ while(not nb.init()):
     print(".")
 
 while(True):
-    if(ticks_ms() > chk_net_timer):  # 連線狀態查詢週期
-        chk_net_timer = ticks_ms() + CHECK_NET_INTERVAL_MS
-        if(not nb.chkNet()):
-            print("ISP Connecting")
-            nbConnect()
-            print("ISP Connected")
+    if(not nb.chkNet()):
+        print("ISP Connecting")
+        nbConnect()
+        print("ISP Connected")
+    print("working")
 
         # if(not mqtt.chkConnBroker()):
         #     oled.fill(0)  # 清除畫面
