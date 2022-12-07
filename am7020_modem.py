@@ -7,7 +7,7 @@
 # @Date   : 2020/11/5 下午1:40:47
 
 from machine import UART, Pin
-from utime import ticks_ms, sleep_ms
+from time import ticks_ms, sleep_ms
 
 GSM_OK = "OK\r\n"
 GSM_ERROR = "ERROR\r\n"

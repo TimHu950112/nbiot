@@ -6,7 +6,7 @@
 # @Link   : zack@atticedu.com
 # @Date   : 2020/11/5 下午3:05:31
 
-from am7020.am7020_modem import AM7020Modem
+from am7020_modem import AM7020Modem
 
 
 class AM7020NB(AM7020Modem):

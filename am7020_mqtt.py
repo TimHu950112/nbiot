@@ -7,7 +7,7 @@
 # @Date   : 2020/11/7 下午4:12:24
 
 from random import randint
-from utime import ticks_ms, sleep_ms
+from time import ticks_ms, sleep_ms
 
 CONN_BROKER_TIMEOUT_MS = 90000
 NUM_OF_SUB = 30
